@@ -1,0 +1,120 @@
+import psycopg2
+
+class PostgresConnection(object):
+    def __init__(self):
+        self.connection = psycopg2.connect(database="ecomdb",
+                                           user = "postgres",
+                                           password = "1234",
+                                           host = "127.0.0.1",
+                                           port = "5432")
+
+    def getConnection(self):
+        print("Connection to DB established!")
+        return self.connection
+
+#Query 1
+
+from DBconnection.dbconf import PostgresConnection
+import pandas as pd
+
+class Query1:
+    def __int__(self):
+        self.con= PostgresConnection().getConnection()
+        print("Constructor Called")
+
+    def execute1(self):
+        con = self.con
+        cur = con.cursor()
+
+        div_q = "select s.division, sum(f.total_price) from ecomdb_star_schema.fact_table f"\
+                "join ecomdb_star_schema.store_dim s on f.store_key = s.store_key"\
+                "group by cube(s.division)"\
+                "order by s.division"
+
+        cur.execute(div_q)
+        records = cur.fetchall()
+        div_df = pd.DataFrame(records, columns=["division", "total sales"])
+        div_df["total sales"] = div_df["total sales"].astype("float64")
+        div_df = div_df.dropna()
+        return div_df.to_dict(orient='records')
+
+if __name__ == '__main__':
+    query1 = Query1()
+    date = query1.execute1()
+    print(data)
+
+#Query1Services
+
+from flask import jsonify
+from flask.views import MethodView
+from QueryController.query1 import Query1
+
+class Query1API(MethodView):
+    def __int__(self):
+        self.q1 = Query1()
+
+    def get(self):
+        result = self.q1.execute1()
+        return jsonify(result)
+
+#app.py
+
+from urllib import request
+
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+# Sample data (list of books)
+# books = [
+#     {"id": 1, "title": "Book 1"},
+#     {"id": 2, "title": "Book 2"},
+#     {"id": 3, "title": "Book 3"}
+# ]
+
+# Route to retrieve all books
+@app.route('/books', methods=['GET'])
+def get_books():
+    return jsonify(books)
+
+@app.route('/', methods=['GET'])
+def hello():
+    return jsonify({'message':'Hello world'})
+
+@app.route('/api/hello', methods=['GET'])
+def hello():
+    return jsonify({'message':'Hello world'})
+
+@app.route('/postdata', methods=['POST'])
+def hellopost():
+    data = {}
+    data['name'] = request.json['name']
+    data['age'] = request.json['age']
+    return jsonify({
+        'Name': data['name'],
+        'Age': data['age'],
+    })
+
+from router import query_api, query_api1
+
+app.register_blueprint(query_api, url_prefix='/api/')
+app.register_blueprint(query_api1, url_prefix='/api1/')
+
+if __name__ == '__main__':
+    app.run(host='localhost', port=5000, debug=True)
+
+#router
+
+from QueryServices.Query1service import Query1API
+from flask import Blueprint
+
+#from QueryServices.Query2service import Query2API
+#from QueryServices.Query2service import Query7API
+
+query_api = Blueprint('queryapi',__name__)
+query_api1 = Blueprint('queryapi1',__name__)
+
+query_api.add_url_rule('/query1', view_func=Query1API.as_view("Get Division Wise Sales"))
+#query_api.add_url_rule('/query2', view_func=Query2API.as_view("Custoer Wise Total Sales"))
+#query_api1.add_url_rule('/query7', view_func=Query7API.as_view("X days"))
+
