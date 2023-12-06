@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 p-2">
+      <div class="card p-2 text-center table-wrapper-scroll-y my-custom-scrollbar">
+        <h3 class="text-primary text-center">Query 8</h3>
+        <table id="dataTable" class="table table-bordered table-striped mb-0">
+          <thead>
+          <tr>
+            <th>Quarter</th>
+            <th>Item Name</th>
+            <th>Total Sales</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of data_all8">
+            <td>{{ data.quarter }}</td>
+            <td>{{ data.item_name }}</td>
+            <td>{{ data['total sales'] }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-8">
+      <div style="height: 1000px;" class="chart-wrapper">
+        <canvas baseChart
+                [type]="'bar'"
+                [datasets]="chartData"
+                [labels]="chartLabels"
+                [options]="chartOptions">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

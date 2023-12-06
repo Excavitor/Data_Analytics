@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 p-2">
+      <div class="card p-2 text-center table-wrapper-scroll-y my-custom-scrollbar">
+        <h3 class="text-primary text-center">Query 10</h3>
+        <table id="dataTable" class="table table-bordered table-striped mb-0">
+          <thead>
+          <tr>
+            <th>Store key</th>
+            <th>Month</th>
+            <th>Average Total Sales</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of data_all10">
+            <td>{{ data.store_key }}</td>
+            <td>{{ data.month }}</td>
+            <td>{{ data.avg_total_price }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+<!--    <div class="col-8">-->
+<!--      <div style="height: 2000px;" class="chart-wrapper">-->
+<!--        <canvas baseChart-->
+<!--                [type]="'line'"-->
+<!--                [datasets]="chartData"-->
+<!--                [labels]="chartLabels"-->
+<!--                [options]="chartOptions">-->
+<!--        </canvas>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+  <div class="col-8">
+    <div style="width: 2000px; height: 500px" class="chart-wrapper">
+      <canvas baseChart
+              [type]="'line'"
+              [datasets]="chartData"
+              [labels]="chartLabels"
+              [options]="chartOptions">
+      </canvas>
+    </div>
+  </div>
+</div>

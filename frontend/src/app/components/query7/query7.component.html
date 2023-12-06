@@ -1,0 +1,76 @@
+<div class="card-header text-center h4">
+  Input
+</div>
+<div class="row">
+<div class="card-body">
+  <form [formGroup]="query7From" (ngSubmit)="search()">
+    <div class="mb-3">
+      <label for="days" class="form-label">Enter Days</label>
+      <input
+        type="text"
+        class="form-control"
+        id="days"
+        formControlName="days"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
+</div>
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+    <div class="card shadow">
+      <div class="card-header text-center h4">
+        OutPut
+        <a class="btn btn-secondary btn-sm float-end" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+           aria-expanded="false" aria-controls="multiCollapseExample1">
+          Toggle
+        </a>
+      </div>
+
+      <div class="card-body">
+        <div *ngIf="data_all7.length == 0 else elseBlock">
+          Input Days >= 355
+        </div>
+        <ng-template #elseBlock>Data Received></ng-template>
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            <div class="row">
+              <div class="col-4" *ngFor="let d of data_all7">
+                <li>
+                  {{d["item Name"]}}
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<div class="card mt-3">-->
+<!--  <div class="card-header text-center h4">-->
+<!--    Output-->
+<!--    <button class="btn btn-link float-end" (click)="toggleOutput()">Toggle Output</button>-->
+<!--  </div>-->
+<!--  <div class="card-body">-->
+<!--    <div *ngIf="showOutputMessage">-->
+<!--      <p>Data received successfully!</p>-->
+<!--    </div>-->
+<!--    <div *ngIf="showAllOutput">-->
+<!--      &lt;!&ndash; Display your output data here &ndash;&gt;-->
+<!--      <ul>-->
+<!--        <li *ngFor="let item of data_all7">-->
+<!--          {{ item["item Name"] }}-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
