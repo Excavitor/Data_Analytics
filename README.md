@@ -7,4 +7,6 @@
     <img src="screenshots/Nav Bar Image Complete.png"/>
     <br>
     <img src="screenshots/profile icon.png"/>
+    <br>
+    <img src="screenshots/Angular Frontend Changed.png"/>
 </div>
