@@ -9,4 +9,6 @@
     <img src="screenshots/profile icon.png"/>
     <br>
     <img src="screenshots/Angular Frontend Changed.png"/>
+    <br>
+    <img src="screenshots/color combination Changed.png"/>
 </div>
