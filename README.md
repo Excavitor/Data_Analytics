@@ -10,5 +10,5 @@
     <br>
     <img src="screenshots/Angular Frontend Changed.png"/>
     <br>
-    <img src="screenshots/color combination Changed.png"/>
+    <img src="screenshots/color combination changed.png"/>
 </div>
