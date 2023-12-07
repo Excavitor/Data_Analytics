@@ -125,7 +125,7 @@ a.sidebar-link{
 
 /* Footer and Nav */
 
-@media (max-width:767.98px) {
+/* @media (max-width:767.98px) {
 
     .content{
         max-width: auto;
@@ -139,10 +139,10 @@ a.sidebar-link{
     #sidebar.collapsed {
         margin-left: 0;
     }
-}
+} */
 
 
-.theme-toggle {
+/* .theme-toggle {
     position: fixed;
     top: 50%;
     transform: translateY(-65%);
@@ -152,9 +152,9 @@ a.sidebar-link{
     left: auto;
     border: none;
     background-color: var(--bs-body-color);
-}
+} */
 
-html[data-bs-theme="dark"] .theme-toggle .fa-sun,
+/* html[data-bs-theme="dark"] .theme-toggle .fa-sun,
 html[data-bs-theme="light"] .theme-toggle .fa-moon {
     cursor: pointer;
     padding: 10px;
@@ -169,4 +169,4 @@ html[data-bs-theme="dark"] .theme-toggle .fa-moon {
 
 html[data-bs-theme="light"] .theme-toggle .fa-sun {
     display: none;
-}
+} */

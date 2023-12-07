@@ -43,12 +43,10 @@
                                 </a>
                                 <ul id="query1" class="sidebar-dropdown list-unstyled collapse"style="margin-left: 10px;">
                                     <li class="sidebar-item">
-                                        <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Query 1 - Division</a>
-                                        </li>
-                                        <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Query 1 - District</a>
-                                        </li>
+                                        <a href="#" class="sidebar-link">Query 1 - Division</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Query 1 - District</a>
                                     </li>
                                 </ul>
                             </li>
@@ -178,7 +176,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="image/profile1.png" class="avatar img-fluid rounded" alt="">
+                                <img src="image/profile1.pn" class="avatar img-fluid rounded" alt="Profile Picture">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
@@ -249,5 +247,11 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        const sidebarToggle = document.querySelector("#sidebar-toggle");
+        sidebarToggle.addEventListener("click",function(){
+            document.querySelector("#sidebar").classList.toggle("collapsed");
+        });
+    </script>
 </body>

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+  // imagePath = 'app/image/profile1.png';
+  imagePath = 'assets/image/profile1.png';
+
+
+  isSidebarCollapsed = false;
+
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
+  }
 }
