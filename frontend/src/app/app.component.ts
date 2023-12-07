@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
-  // imagePath = 'app/image/profile1.png';
-  imagePath = 'assets/image/profile1.png';
+  // imagePath = 'assets/image/profile1.png';
+  imagePath = 'assets/image/profile2.png';
 
 
   isSidebarCollapsed = false;
