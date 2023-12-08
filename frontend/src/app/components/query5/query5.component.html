@@ -1,11 +1,34 @@
 <div class="container">
   <div class="row">
     <div class="col-4 p-2">
-      <div class="card p-2 text-center">
-        <h2 class="text-primary text-center">Query 5</h2>
-        <h6 *ngFor="let data of data_all5">
-          {{data.Division}} - {{data['total sales']}}
-        </h6>
+      <div class="card p-2 text-center table-wrapper-scroll-y my-custom-scrollbar">
+        <h3 class="text-primary text-center">Query 5</h3>
+        <table id="dataTable" class="table table-bordered table-striped mb-0">
+          <thead>
+          <tr>
+            <th>Division</th>
+            <th>Quarter</th>
+            <th>Total Sales</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of data_all5">
+            <td>{{ data.Division }}</td>
+            <td>{{ data.Quarter }}</td>
+            <td>{{ data['total sales'] }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [type]="'bar'"
+                [datasets]="chartData"
+                [labels]="chartLabels"
+                [options]="chartOptions">
+        </canvas>
       </div>
     </div>
   </div>

@@ -12,7 +12,6 @@ class Query3:
 
         div_q = """ SELECT s.division, SUM(f.total_price) FROM ecomdb_star_schema.fact_table f 
                     join ecomdb_star_schema.store_dim s on s.store_key = f.store_key
-                    where s.division = 'Barishal'
                     group by cube(s.division)
                     order by s.division;
                 """
