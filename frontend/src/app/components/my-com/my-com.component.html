@@ -20,6 +20,12 @@
       </div>
     </div>
     <div class="col-7">
+      <label for="dataCount">Select number of items to visualize:</label>
+      <select id="dataCount" [(ngModel)]="selectedDataCount" (change)="updateChartData()">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">26</option>
+      </select>
       <div class="chart-wrapper">
         <canvas baseChart
                 [type]="'line'"

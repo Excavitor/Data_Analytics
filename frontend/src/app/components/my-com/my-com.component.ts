@@ -18,6 +18,7 @@ export class MyComComponent implements OnInit {
   sales: any[] = [];
   option: DataTables.Settings = {};
   dtTrigger:Subject<any>=new Subject<any>();
+  selectedDataCount: number = 10; // Default value
 
   chartData: ChartDataset[] = [
     {
@@ -110,5 +111,27 @@ export class MyComComponent implements OnInit {
       }
     )
   }
+
+  updateChartData(): void {
+    // Validate selectedDataCount
+    if (this.selectedDataCount < 1 || this.selectedDataCount > this.data_all.length) {
+      console.error('Invalid selectedDataCount');
+      return;
+    }
+
+    // Update chartData and chartLabels based on the selectedDataCount
+    const selectedData = this.data_all.slice(0, this.selectedDataCount);
+
+    // Clear existing data
+    this.chartData[0].data = [];
+    this.chartLabels = [];
+
+    // Update with selected data
+    for (const d of selectedData) {
+      this.chartData[0].data.push(d['total sales']);
+      this.chartLabels.push(d.district);
+    }
+  }
+
 
 }
