@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QueryService } from "../../services/query.service";
 import { HttpClient } from "@angular/common/http";
 import { ChartDataset, ChartOptions } from "chart.js";
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-query8',
@@ -16,6 +17,8 @@ export class Query8Component implements OnInit {
   quarter: any[] = [];
   item_name: any[] = [];
   sales: any[] = [];
+  option: DataTables.Settings = {};
+  dtTrigger:Subject<any>=new Subject<any>();
 
   chartData: ChartDataset[] = [
     {
@@ -82,6 +85,18 @@ export class Query8Component implements OnInit {
     }
   };
   ngOnInit(): void {
+    this.option = {
+      paging: true,
+      searching: true,
+      lengthChange: true,
+      // pageLength: 10,
+      // processing: true,
+      // serverSide: true,
+      pagingType: 'simple_numbers',
+      language:{
+        searchPlaceholder:'Search any'
+      }
+    };
     this.getValue8()
   }
 
@@ -94,6 +109,7 @@ export class Query8Component implements OnInit {
           this.sales.push(d['total sales']);
         }
         this.data_all8 = data
+        this.dtTrigger.next(null);
       }
     )
   }

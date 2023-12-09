@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QueryService } from "../../services/query.service";
 import { HttpClient } from "@angular/common/http";
 import { ChartDataset, ChartOptions } from "chart.js";
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-query10',
@@ -16,6 +17,8 @@ export class Query10Component implements OnInit {
   store_key: any[] = [];
   month: any[] = [];
   avg_total_price: any[] = [];
+  option: DataTables.Settings = {};
+  dtTrigger:Subject<any>=new Subject<any>();
 
   chartData: ChartDataset[] = [
     {
@@ -89,6 +92,18 @@ export class Query10Component implements OnInit {
     }
   };
   ngOnInit(): void {
+    this.option = {
+      paging: true,
+      searching: true,
+      lengthChange: true,
+      // pageLength: 10,
+      // processing: true,
+      // serverSide: true,
+      pagingType: 'simple_numbers',
+      language:{
+        searchPlaceholder:'Search any'
+      }
+    };
     this.getValue10()
   }
 
@@ -100,6 +115,7 @@ export class Query10Component implements OnInit {
           this.month.push(d.month)
           this.avg_total_price.push(d.avg_total_price);
         }
+        this.dtTrigger.next(null);
         this.data_all10 = data
       }
     )

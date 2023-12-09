@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-4 p-2">
+    <div class="col-5 p-2">
       <div class="card p-2 text-center table-wrapper-scroll-y my-custom-scrollbar">
         <h3 class="text-primary text-center">Query 1</h3>
-        <table id="dataTable" class="table table-bordered table-striped mb-0">
+        <table datatable [dtOptions]="option" [dtTrigger]="dtTrigger" class="table table-bordered table-striped mb-0">
           <thead>
           <tr>
             <th>District</th>
@@ -19,7 +19,7 @@
         </table>
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-7">
       <div class="chart-wrapper">
         <canvas baseChart
                 [type]="'line'"

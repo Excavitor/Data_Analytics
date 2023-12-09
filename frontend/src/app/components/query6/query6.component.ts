@@ -2,20 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { QueryService } from "../../services/query.service";
 import { HttpClient } from "@angular/common/http";
 import { ChartDataset, ChartOptions } from "chart.js";
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-query6',
   templateUrl: './query6.component.html',
   styleUrls: ['./query6.component.css']
 })
-export class Query6Component implements OnInit {
 
+export class Query6Component implements OnInit {
   constructor(private queryService: QueryService, private http: HttpClient) { }
 
   data_all6: any
   store_key: any[] = [];
   item_name: any[] = [];
   quantity: any[] = [];
+  option: DataTables.Settings = {};
+  dtTrigger:Subject<any>=new Subject<any>();
 
   chartData: ChartDataset[] = [
     {
@@ -79,7 +82,20 @@ export class Query6Component implements OnInit {
       }
     }
   };
+
   ngOnInit(): void {
+    this.option = {
+      paging: true,
+      searching: true,
+      lengthChange: true,
+      // pageLength: 10,
+      // processing: true,
+      // serverSide: true,
+      pagingType: 'simple_numbers',
+      language:{
+        searchPlaceholder:'Search any'
+      }
+    };
     this.getValue6()
   }
 
@@ -92,6 +108,7 @@ export class Query6Component implements OnInit {
           this.quantity.push(d['total sales(quantity)']);
         }
         this.data_all6 = data
+        this.dtTrigger.next(null);
       }
     )
   }
