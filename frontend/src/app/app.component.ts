@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
-  // imagePath = 'assets/image/profile1.png';
   imagePath = 'assets/image/profile2.png';
 
 

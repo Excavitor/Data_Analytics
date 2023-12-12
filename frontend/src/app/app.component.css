@@ -24,20 +24,14 @@ li {
   list-style: none;
 }
 
-/* h4 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.275rem;
-    color: var(--bs-emphasis-color);
-} */
-
 /* Layout for admin dashboard skeleton */
-.wrapper{
+.wrapper {
   align-items: stretch;
   display: flex;
   width: 100%;
 }
 
-.main{
+.main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -51,7 +45,7 @@ li {
 
 
 /* Sidebar Elements Style */
-#sidebar{
+#sidebar {
   max-width: 264px;
   min-width: 264px;
   /* background-color: #191919; */
@@ -59,7 +53,7 @@ li {
   transition: all 0.35s ease-in-out;
 }
 
-a.sidebar-link{
+a.sidebar-link {
   padding: .625rem 1.625rem;
   /* color: #e9ecef; */
   color: #fff;
@@ -68,16 +62,17 @@ a.sidebar-link{
   font-size: 0.875rem;
 }
 
-.sidebar-logo{
+.sidebar-logo {
   padding: 1.15rem;
 }
-.sidebar-logo a{
+
+.sidebar-logo a {
   color: #e9ecef;
   font-size: 1.15rem;
   font-weight: 600;
 }
 
-.sidebar-nav{
+.sidebar-nav {
   flex-grow: 1;
   list-style: none;
   margin-bottom: 0;
@@ -85,13 +80,13 @@ a.sidebar-link{
   margin-left: 0;
 }
 
-.sidebar-header{
+.sidebar-header {
   color: #e9ecef;
   font-size: .75rem;
   padding: 1.5rem 1.5rem .375rem;
 }
 
-.sidebar-link[data-bs-toggle="collapse"]::after{
+.sidebar-link[data-bs-toggle="collapse"]::after {
   border: solid;
   border-width: 0 .075rem .075rem 0;
   content: "";
@@ -104,15 +99,15 @@ a.sidebar-link{
   transition: all .2s ease-out;
 }
 
-.sidebar-link[data-bs-toggle="collapse"].collapsed::after{
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
   transform: rotate(45deg);
   transition: all .2s ease-out;
 }
 
 
-.avatar{
-  height: 40px;
-  width: 40px;
+.avatar {
+  height: 20px;
+  width: 20px;
 }
 
 .navbar-expand .navbar-nav {
@@ -122,54 +117,6 @@ a.sidebar-link{
 
 /* Sidebar Toggle */
 
-#sidebar.collapsed{
+#sidebar.collapsed {
   margin-left: -264px;
 }
-
-/* Footer and Nav */
-
-/* @media (max-width:767.98px) {
-
-    .content{
-        max-width: auto;
-        width: auto;
-    }
-
-    .js-sidebar {
-        margin-left: -264px;
-    }
-
-    #sidebar.collapsed {
-        margin-left: 0;
-    }
-} */
-
-
-/* .theme-toggle {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-65%);
-    text-align: center;
-    z-index: 10;
-    right: 0;
-    left: auto;
-    border: none;
-    background-color: var(--bs-body-color);
-} */
-
-/* html[data-bs-theme="dark"] .theme-toggle .fa-sun,
-html[data-bs-theme="light"] .theme-toggle .fa-moon {
-    cursor: pointer;
-    padding: 10px;
-    display: block;
-    font-size: 1.25rem;
-    color: #FFF;
-}
-
-html[data-bs-theme="dark"] .theme-toggle .fa-moon {
-    display: none;
-}
-
-html[data-bs-theme="light"] .theme-toggle .fa-sun {
-    display: none;
-} */

@@ -1,43 +1,130 @@
-<div class="container">
-  <label for="dataCount">Select number of items to visualize:</label>
-  <select id="dataCount" [(ngModel)]="selectedDataCount" (change)="updateChartData()">
-    <option value="10">10</option>
-    <option value="20">20</option>
-    <option value="50">50</option>
-    <!-- Add more options as needed -->
-  </select>
-      <div class="chart-wrapper">
-        <canvas baseChart
-                [type]="'bar'"
-                [datasets]="chartData"
-                [labels]="chartLabels"
-                [options]="chartOptions">
-        </canvas>
+<main class="content px-3 py-2">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 d-flex">
+        <div class="card flex-fill border-0">
+          <div class="card-body p-0 d-flex flex-fill">
+            <div class="row g-0 w-100">
+              <div class="col-6">
+                <div class="p-3 m-1">
+                  <h4 class="mb-0" style="font-weight: normal">Query 6</h4>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 m-1">
+                  <p style="text-align: right" class="mb-0">
+                    <span style="color: #b6b6b4; font-weight: normal">All Queries /
+                    </span>
+                    <a style="
+                                color: black;
+                                font-weight: normal;
+                                text-decoration: none;
+                              ">
+                      Query 6
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-  <div class="row">
-    <div class="col-5 p-2">
-      <div class="card p-2 text-center table-wrapper-scroll-y my-custom-scrollbar">
-        <h3 class="text-primary text-center">Query 6</h3>
-        <table datatable [dtOptions]="option" [dtTrigger]="dtTrigger" class="table table-bordered table-striped mb-0">
-          <thead>
-          <tr>
-            <th>Store Key</th>
-            <th>Item Name</th>
-            <th>Total Sales</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let data of data_all6">
-            <td>{{ data.store_key }}</td>
-            <td>{{ data.item_name }}</td>
-            <td>{{ data['total sales(quantity)'] }}</td>
-          </tr>
-          </tbody>
-        </table>
+    </div>
+
+    <div class="row">
+      <div class="col-12 d-flex">
+        <div class="card flex-fill border-0">
+          <div class="card-body py-4">
+            <div class="d-flex align-items-start">
+              <div class="flex-grow-1">
+                <label for="dataCount">Select number of items to visualize:</label>
+                <select id="dataCount" [(ngModel)]="selectedDataCount" (change)="updateChartData()">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                  <option value="{{ data_all6.length }}">{{ 'All (' + data_all6.length + ')' }}</option>
+                </select>
+                <div class="chart-wrapper">
+                  <canvas baseChart [type]="'bar'" [datasets]="chartData" [labels]="chartLabels"
+                    [options]="chartOptions">
+                  </canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card flex-fill border-0">
+          <div class="card-body  table-wrapper-scroll-y my-custom-scrollbar">
+            <table datatable [dtOptions]="option6" [dtTrigger]="dtTrigger6"
+              class="table table-bordered table-striped mb-0">
+              <thead>
+                <tr>
+                  <th>Store Key</th>
+                  <th>Item Name</th>
+                  <th>Total Sales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of data_all6">
+                  <td>{{ data.store_key }}</td>
+                  <td>{{ data.item_name }}</td>
+                  <td>{{ data['total sales(quantity)'] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 d-flex">
+        <div class="card flex-fill border-0">
+          <div class="card-body py-4">
+            <div class="d-flex align-items-start">
+              <div class="flex-grow-1">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      Summary
+                    </button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      Analytics
+                    </button>
+                  </div>
+                </nav>
+                <div class="tab-content p-2" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                    tabindex="0">
+                    <h3>Chart Summary</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Qui, iure quas! Quas, dolore odit ab debitis
+                      vel labore similique ex ipsum dolor culpa nobis
+                      cum beatae incidunt architecto necessitatibus
+                      asperiores.
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                    tabindex="0">
+                    <h3>Chart Analytics</h3>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing
+                    elit. Dolor ad ex excepturi facilis, iste at saepe,
+                    repellat perspiciatis officia libero harum
+                    voluptatem facere ea perferendis aspernatur sint
+                    tempora? Est, illo.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
+</main>

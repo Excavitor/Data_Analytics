@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +8,7 @@ import { Query1Component } from './components/query1/query1.component';
 import { CommonModule } from '@angular/common';
 import {NgChartsModule} from "ng2-charts";
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DataTablesModule} from "angular-datatables";
 import { MyComComponent } from './components/my-com/my-com.component';
 import { Query2Component } from './components/query2/query2.component';
@@ -21,6 +20,7 @@ import { Query7Component } from './components/query7/query7.component';
 import { Query8Component } from './components/query8/query8.component';
 import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
+// import { DashComponent } from './components/dash/dash.component';
 
 @NgModule({
   declarations: [
@@ -37,17 +37,18 @@ import { Query10Component } from './components/query10/query10.component';
     Query8Component,
     Query9Component,
     Query10Component,
+    // DashComponent,
   ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        AppRoutingModule,
-        CommonModule,
-        NgChartsModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        DataTablesModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    NgChartsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    DataTablesModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

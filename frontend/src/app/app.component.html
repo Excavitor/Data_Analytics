@@ -1,275 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- data-bs-theme="dark" -->
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-<!--  <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<div class="wrapper">
-  <!-- =========== Sidebar for admin dashboard =========== -->
-
-  <aside id="sidebar" class="js-sidebar" [ngClass]="{'collapsed': isSidebarCollapsed}">
-    <div class="h-100">
-      <div class="sidebar-logo">
-        <a [routerLink]="'/'" style="padding-left: 10px;">Admin Dashboard</a>
-      </div>
-      <ul class="sidebar-nav">
-        <!-- <li class="sidebar-header">
-            Queries
-        </li> -->
-        <li class="sidebar-item">
-          <a [routerLink]="'first-component'" class="sidebar-link">
-            <i class="bi bi-view-stacked" style="padding-right: 6px;"></i>
-<!--            <i class="fa-solid fa-list" style="padding-right: 6px;"></i>-->
-            Dashboard
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
-             aria-expanded="false"><i class="bi bi-bricks pe-2"></i>
-            All Queries
-          </a>
-          <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="margin-left: 32px;">
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link collapsed" data-bs-target="#query1" data-bs-toggle="collapse"
-                 aria-expanded="false">
-                Query 1
-              </a>
-              <ul id="query1" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px;">
-                <li class="sidebar-item">
-<!--                  <a href="#" class="sidebar-link">Query 1 - Division</a>-->
-                  <a [routerLink]="'q1'" class="sidebar-link">Query 1 - Division</a>
-                </li>
-                <li class="sidebar-item">
-<!--                  <a href="#" class="sidebar-link">Query 1 - District</a>-->
-                  <a [routerLink]="'my-com'" class="sidebar-link">Query1 - district</a>
-                </li>
-              </ul>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 2</a>-->
-              <a [routerLink]="'q2'" class="sidebar-link">Query 2</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 3</a>-->
-              <a [routerLink]="'q3'" class="sidebar-link">Query 3</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 4</a>-->
-              <a [routerLink]="'q4'" class="sidebar-link">Query 4</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 5</a>-->
-              <a [routerLink]="'q5'" class="sidebar-link">Query 5</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 6</a>-->
-              <a [routerLink]="'q6'" class="sidebar-link">Query 6</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 7</a>-->
-              <a [routerLink]="'q7'" class="sidebar-link">Query 7</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 8</a>-->
-              <a [routerLink]="'q8'" class="sidebar-link">Query 8</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 9</a>-->
-              <a [routerLink]="'q9'" class="sidebar-link">Query 9</a>
-            </li>
-            <li class="sidebar-item">
-<!--              <a href="#" class="sidebar-link">Query 10</a>-->
-              <a [routerLink]="'q10'" class="sidebar-link">Query 10</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link collapsed" data-bs-target="#financial" data-bs-toggle="collapse"
-             aria-expanded="false"><i class="bi bi-bank pe-2"></i>
-            Financial Analytics
-          </a>
-          <ul id="financial" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="margin-left: 32px;">
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link collapsed" data-bs-target="#financialStoreTime" data-bs-toggle="collapse"
-                 aria-expanded="false">Store and Time</a>
-
-              <ul id="financialStoreTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px;">
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 1</a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 2</a>
-                </li>
-              </ul>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link collapsed" data-bs-target="#financialCustomerTime" data-bs-toggle="collapse"
-                 aria-expanded="false">Customer and Time</a>
-
-              <ul id="financialCustomerTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px;">
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 1</a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 2</a>
-                </li>
-              </ul>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link collapsed" data-bs-target="#financialItemTime" data-bs-toggle="collapse"
-                 aria-expanded="false">Item and Time</a>
-
-              <ul id="financialItemTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px;">
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 1</a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 2</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <!-- <li class="sidebar-header">
-            Multi Level Menu
-        </li> -->
-        <li class="sidebar-item">
-          <a href="#" class="sidebar-link collapsed" data-bs-target="#multi3" data-bs-toggle="collapse"
-             aria-expanded="false"><i class="bi bi-shop-window pe-2"></i>
-            Inventory Analytics
-          </a>
-          <ul id="multi3" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar" style="margin-left: 32px;">
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link collapsed" data-bs-target="#inventoryStoteTime" data-bs-toggle="collapse"
-                 aria-expanded="false">Store and Time</a>
-
-              <ul id="inventoryStoteTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px;">
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 1</a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 2</a>
-                </li>
-              </ul>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link collapsed" data-bs-target="#inventoryItemTime" data-bs-toggle="collapse"
-                 aria-expanded="false">Item and Time</a>
-
-              <ul id="inventoryItemTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px;">
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 1</a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Analytics 2</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </aside>
-
-  <div class="main">
-    <nav class="navbar navbar-expand px-3 border-bottom">
-<!--      <button class="btn" id="sidebar-toggle" type="button">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--      </button>-->
-      <button class="btn" (click)="toggleSidebar()" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse navbar">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-              <img [src]="imagePath" class="avatar img-fluid rounded" alt="Profile Picture">
+  <div class="wrapper">
+    <aside id="sidebar" class="js-sidebar" [ngClass]="{ collapsed: isSidebarCollapsed }">
+      <div class="h-100">
+        <div class="sidebar-logo">
+          <a [routerLink]="'/'" style="padding-left: 10px">Admin Dashboard</a>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a [routerLink]="'first-component'" class="sidebar-link">
+              <i class="fa-solid fa-list" style="padding-right: 6px"></i>
+              Dashboard
             </a>
-<!--            <div class="dropdown-menu dropdown-menu-end">-->
-<!--              <a href="#" class="dropdown-item">Profile</a>-->
-<!--              <a href="#" class="dropdown-item">Setting</a>-->
-<!--              <a href="#" class="dropdown-item">Logout</a>-->
-<!--            </div>-->
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
+              aria-expanded="false"><i class="fa-brands fa-slack pe-2"></i>
+              All Queries
+            </a>
+            <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar"
+              style="margin-left: 15px">
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-target="#query1" data-bs-toggle="collapse"
+                  aria-expanded="false">
+                  Query 1
+                </a>
+                <ul id="query1" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px">
+                  <li class="sidebar-item">
+                    <a [routerLink]="'q1'" class="sidebar-link">Query 1 - Division</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a [routerLink]="'my-com'" class="sidebar-link">Query1 - district</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q2'" class="sidebar-link">Query 2</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q3'" class="sidebar-link">Query 3</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q4'" class="sidebar-link">Query 4</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q5'" class="sidebar-link">Query 5</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q6'" class="sidebar-link">Query 6</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q7'" class="sidebar-link">Query 7</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q8'" class="sidebar-link">Query 8</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q9'" class="sidebar-link">Query 9</a>
+              </li>
+              <li class="sidebar-item">
+                <a [routerLink]="'q10'" class="sidebar-link">Query 10</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed" data-bs-target="#financial" data-bs-toggle="collapse"
+              aria-expanded="false"><i class="fa-solid fa-coins pe-2"></i>
+              Financial Analytics
+            </a>
+            <ul id="financial" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar"
+              style="margin-left: 15px">
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-target="#financialStoreTime"
+                  data-bs-toggle="collapse" aria-expanded="false">Store and Time</a>
+
+                <ul id="financialStoreTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px">
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 1</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-target="#financialCustomerTime"
+                  data-bs-toggle="collapse" aria-expanded="false">Customer and Time</a>
+
+                <ul id="financialCustomerTime" class="sidebar-dropdown list-unstyled collapse"
+                  style="margin-left: 10px">
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 1</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-target="#financialItemTime" data-bs-toggle="collapse"
+                  aria-expanded="false">Item and Time</a>
+
+                <ul id="financialItemTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px">
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 1</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 2</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link collapsed" data-bs-target="#multi3" data-bs-toggle="collapse"
+              aria-expanded="false"><i class="fa-solid fa-store pe-2"></i>
+              Inventory Analytics
+            </a>
+            <ul id="multi3" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar"
+              style="margin-left: 15px">
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-target="#inventoryStoteTime"
+                  data-bs-toggle="collapse" aria-expanded="false">Store and Time</a>
+
+                <ul id="inventoryStoteTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px">
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 1</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed" data-bs-target="#inventoryItemTime" data-bs-toggle="collapse"
+                  aria-expanded="false">Item and Time</a>
+
+                <ul id="inventoryItemTime" class="sidebar-dropdown list-unstyled collapse" style="margin-left: 10px">
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 1</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">Analytics 2</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
+    </aside>
 
-    </nav>
+    <div class="main">
+      <nav class="navbar navbar-expand px-3 border-bottom">
+        <button class="btn" (click)="toggleSidebar()" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <main class="content px-3 py-2">
-      <div class="container-fluid">
-<!--        <div class="mb-3">-->
-<!--          <h4>Welcome Admin</h4>-->
-<!--        </div>-->
-        <router-outlet></router-outlet>
+        <div class="navbar-collapse navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                <img [src]="imagePath" class="avatar img-fluid rounded" alt="Profile Picture" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-        <!-- <div class="row">
-            <div class="col-12 col-md-6 d-flex">
-                <div class="card flex-fill border-0 illustration">
-                    <div class="card-body p-0 d-flex flex-fill">
-                        <div class="row g-0 w-100">
-                            <div class="col-6">
-
-                            </div>
-                            <div class="col-6 align-self-end text-end">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 d-flex">
-                <div class="card flex-fill border-0">
-                    <div class="card-body py-4">
-                        <div class="d-flex align-items-start">
-                            <div class="flex-grow-1">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- <div class="card border-0">
-            <div class="card-header">
-
-            </div>
-            <div class="card-body">
-
-            </div>
-        </div> -->
-      </div>
-    </main>
-
-    <!-- ========= light and dark mode toggle button ======= -->
-
-    <!-- <a href="#" class="theme-toggle">
-        <i class="fa-regular fa-moon"></i>
-        <i class="fa-regular fa-sun"></i>
-    </a> -->
-
-    <!-- <footer class="footer">
-
-    </footer> -->
+      <main class="content px-3 py-2">
+        <div class="container-fluid">
+          <router-outlet></router-outlet>
+        </div>
+      </main>
+    </div>
   </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="script.js"></script> -->
-<script>
-  const sidebarToggle = document.querySelector("#sidebar-toggle");
-  sidebarToggle.addEventListener("click",function(){
-    document.querySelector("#sidebar").classList.toggle("collapsed");
-  });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sidebarToggle = document.querySelector("#sidebar-toggle");
+    sidebarToggle.addEventListener("click", function () {
+      document.querySelector("#sidebar").classList.toggle("collapsed");
+    });
+  </script>
 </body>
+</html>

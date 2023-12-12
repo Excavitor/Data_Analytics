@@ -1,47 +1,32 @@
-import {Component, OnInit} from '@angular/core';
-import {ChartDataset, ChartOptions} from "chart.js";
-import {QueryService} from "../../services/query.service";
-import {query} from "@angular/animations";
-import {HttpClient} from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
+import { ChartDataset, ChartOptions } from 'chart.js';
+import { QueryService } from '../../services/query.service';
+import { query } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-query1',
   templateUrl: './query1.component.html',
-  styleUrls: ['./query1.component.css']
+  styleUrls: ['./query1.component.css'],
 })
 export class Query1Component implements OnInit {
-
   data_all: any[] = [];
   division: any[] = [];
   sales: any[] = [];
 
   chartData: ChartDataset[] = [
     {
-      type: "pie",
+      type: 'pie',
       label: 'Sales in Taka',
       data: this.sales,
-    }
+    },
   ];
   chartLabels: string[] = this.division;
 
   chartOptions: ChartOptions = {
-
     // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // // ⤵️ Remove the grids
-    // scales: {
-    //   xAxis: {
-    //     display: false,
-    //     grid: {
-    //       drawBorder: false // removes random border at bottom
-    //     }
-    //   },
-    //   yAxis: {
-    //     display: false
-    //   }
-    // },
 
     plugins: {
       legend: {
@@ -57,19 +42,18 @@ export class Query1Component implements OnInit {
         // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
-          size: 18
+          size: 18,
         },
 
         // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
-          size: 13
-        }
-      }
-    }
+          size: 13,
+        },
+      },
+    },
   };
-  constructor(private queryService: QueryService, private http: HttpClient) {
-  }
+  constructor(private queryService: QueryService, private http: HttpClient) {}
 
   ngOnInit() {
     this.query1DivisionData();
@@ -77,13 +61,12 @@ export class Query1Component implements OnInit {
 
   query1DivisionData(): void {
     this.queryService.getQuery1Division().subscribe((data: any) => {
-        for (const d of data) {
-          console.log(d)
-          this.division.push(d.division)
-          this.sales.push(d['total sales'])
-        }
-        this.data_all = data;
+      for (const d of data) {
+        console.log(d);
+        this.division.push(d.division);
+        this.sales.push(d['total sales']);
       }
-    );
+      this.data_all = data;
+    });
   }
 }
