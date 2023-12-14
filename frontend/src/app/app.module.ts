@@ -20,6 +20,8 @@ import { Query7Component } from './components/query7/query7.component';
 import { Query8Component } from './components/query8/query8.component';
 import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
+import { FinancialStoreTime1Component } from './components/financial-store-time1/financial-store-time1.component';
+import { FinancialStoreTime2Component } from './components/financial-store-time2/financial-store-time2.component';
 // import { DashComponent } from './components/dash/dash.component';
 
 @NgModule({
@@ -37,6 +39,8 @@ import { Query10Component } from './components/query10/query10.component';
     Query8Component,
     Query9Component,
     Query10Component,
+    FinancialStoreTime1Component,
+    FinancialStoreTime2Component,
     // DashComponent,
   ],
   imports: [

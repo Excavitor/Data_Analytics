@@ -61,4 +61,12 @@ export class QueryService {
   getQuery10(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/q10`);
   }
+
+  getFST1(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/financialStoreTime1`);
+  }
+
+  getFST2(): Observable<any> {
+    return this.http.get<any>(`${baseUrl}/financialStoreTime2`);
+  }
 }

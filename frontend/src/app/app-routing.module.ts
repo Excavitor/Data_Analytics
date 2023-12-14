@@ -12,6 +12,7 @@ import { Query7Component } from './components/query7/query7.component';
 import { Query8Component } from './components/query8/query8.component';
 import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
+import { FinancialStoreTime1Component } from './components/financial-store-time1/financial-store-time1.component'
 
 const routes: Routes = [
   { path: 'first-component', component: AddTutorialComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'q8', component: Query8Component },
   { path: 'q9', component: Query9Component },
   { path: 'q10', component: Query10Component },
+  { path: 'financialStoreTime1', component: FinancialStoreTime1Component },
 ];
 
 @NgModule({
