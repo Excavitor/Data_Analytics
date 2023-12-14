@@ -36,6 +36,10 @@ export class QueryService {
     return this.http.get<any>(`${baseUrl}/q5`);
   }
 
+  // getQuery5V2(): Observable<any> {
+  //   return this.http.get<any>(`${baseUrl}/q5v2`);
+  // }
+
   getQuery6(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/q6`);
   }

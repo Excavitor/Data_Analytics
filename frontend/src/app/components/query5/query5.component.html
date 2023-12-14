@@ -36,20 +36,27 @@
       <div class="col-12 col-md-6 d-flex">
         <div class="card flex-fill border-0">
           <div class="card-body">
-            <table class="table">
+            <table class="table" style="text-align: center">
               <thead>
                 <tr>
-                  <th>Division</th>
+<!--                  <th>Division</th>-->
                   <th>Quarter</th>
-                  <th>Total Sales</th>
+                  <th>Total Sales Barishal</th>
+                  <th>Total Sales Dhaka</th>
+                  <th>Total Sales Chittagong</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let data of data_all5">
-                  <td>{{ data.Division }}</td>
+              <ng-container *ngFor="let data of data_all5['div_q']">
+                <tr>
+<!--                  <td>{{ data.Division }}</td>-->
                   <td>{{ data.Quarter }}</td>
                   <td>{{ data['total sales'] }}</td>
+                  <!-- Add corresponding data for Dhaka -->
+                  <td>{{ getDhakaTotalSales(data.Quarter) }}</td>
+                  <td>{{ getChittagongTotalSales(data.Quarter) }}</td>
                 </tr>
+              </ng-container>
               </tbody>
             </table>
           </div>

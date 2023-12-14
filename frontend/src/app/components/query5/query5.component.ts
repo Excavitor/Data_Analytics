@@ -12,19 +12,38 @@ export class Query5Component implements OnInit {
   constructor(private queryService: QueryService, private http: HttpClient) {}
 
   data_all5: any;
-  Division: any[] = [];
+  // Division: any[] = [];
+  // Division2: any[] = [];
   Quarter: any[] = [];
   sales: any[] = [];
+  sales2: any[] = [];
+  sales3: any[] = [];
 
   chartData: ChartDataset[] = [
     {
       type: 'bar',
-      label: 'Top 3 Products Store-Wise',
+      label: 'Barishal',
       data: this.sales,
       backgroundColor: 'rgba(75, 192, 192, 0.2)',
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 1,
+    },{
+      type: 'bar',
+      label: 'Dhaka',
+      data: this.sales2,
+      backgroundColor: 'blue',
+      borderColor: 'blue',
+      borderWidth: 1,
     },
+    {
+      type: 'bar',
+      label: 'Chittagong',
+      data: this.sales3,
+      backgroundColor: 'orange',
+      borderColor: 'orange',
+      borderWidth: 1,
+    },
+
   ];
   chartLabels: string[] = this.Quarter;
 
@@ -81,15 +100,55 @@ export class Query5Component implements OnInit {
     this.getValue5();
   }
 
+  // getValue5(): void {
+  //   this.queryService.getQuery5().subscribe((data: any) => {
+  //     for (const d of data) {
+  //       console.log(d);
+  //       this.Division.push(d.Division);
+  //       this.Quarter.push(d.Quarter);
+  //       this.sales.push(d['total sales']);
+  //     }
+  //     this.data_all5 = data;
+  //   });
+  // }
+
   getValue5(): void {
     this.queryService.getQuery5().subscribe((data: any) => {
-      for (const d of data) {
-        console.log(d);
-        this.Division.push(d.Division);
-        this.Quarter.push(d.Quarter);
-        this.sales.push(d['total sales']);
-      }
+      // Assuming data_all5 contains combined data for both queries
       this.data_all5 = data;
+
+      // Process data for the chart
+      this.processChartData();
     });
   }
+  processChartData(): void {
+    for (const d of this.data_all5['div_q']) {
+      this.Quarter.push(d.Quarter);
+      this.sales.push(d['total sales']);
+    }
+
+    for (const d of this.data_all5['div_q2']) {
+      this.sales2.push(d['total sales']);
+    }
+
+    for (const d of this.data_all5['div_q3']) {
+      this.sales3.push(d['total sales']);
+    }
+
+    // Update chart data
+    this.chartData[0].data = this.sales;
+    this.chartData[1].data = this.sales2;
+    this.chartData[2].data = this.sales3;
+  }
+
+  getDhakaTotalSales(quarter: string): number {
+    const dhakaData = this.data_all5['div_q2'].find((dhakaD: any) => dhakaD.Quarter === quarter);
+    return dhakaData ? dhakaData['total sales'] : 0;
+  }
+
+  getChittagongTotalSales(quarter: string): number {
+    const chittagongData = this.data_all5['div_q3'].find((chittagongD: any) => chittagongD.Quarter === quarter);
+    return chittagongData ? chittagongData['total sales'] : 0;
+  }
+
 }
