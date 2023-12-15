@@ -15,21 +15,21 @@ class QueryFST2:
                     join ecomdb_star_schema.time_dim t on t.time_key = f.time_key
                     where s.store_size = 'small'
                     group by cube(t.month, s.store_size)
-                    order by s.store_size;
+                    order by t.month;
                 """
         div_q2 = """ select t.month, s.store_size, sum(f.total_price) from ecomdb_star_schema.fact_table f
                             join ecomdb_star_schema.store_dim s on f.store_key = s.store_key
                             join ecomdb_star_schema.time_dim t on t.time_key = f.time_key
                             where s.store_size = 'medium'
                             group by cube(t.month, s.store_size)
-                            order by s.store_size;
+                            order by t.month;
                         """
         div_q3 = """ select t.month, s.store_size, sum(f.total_price) from ecomdb_star_schema.fact_table f
                             join ecomdb_star_schema.store_dim s on f.store_key = s.store_key
                             join ecomdb_star_schema.time_dim t on t.time_key = f.time_key
                             where s.store_size = 'high'
                             group by cube(t.month, s.store_size)
-                            order by s.store_size;
+                            order by t.month;
                         """
 
         cur.execute(div_q1)
