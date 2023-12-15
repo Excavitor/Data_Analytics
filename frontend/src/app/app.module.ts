@@ -22,6 +22,14 @@ import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
 import { FinancialStoreTime1Component } from './components/financial-store-time1/financial-store-time1.component';
 import { FinancialStoreTime2Component } from './components/financial-store-time2/financial-store-time2.component';
+import { FinancialCustomerTime1Component } from './components/financial-customer-time1/financial-customer-time1.component';
+import { FinancialCustomerTime2Component } from './components/financial-customer-time2/financial-customer-time2.component';
+import { FinancialItemTime1Component } from './components/financial-item-time1/financial-item-time1.component';
+import { FinancialItemTime2Component } from './components/financial-item-time2/financial-item-time2.component';
+import { InventoryStoreTime1Component } from './components/inventory-store-time1/inventory-store-time1.component';
+import { InventoryStoreTime2Component } from './components/inventory-store-time2/inventory-store-time2.component';
+import { InventoryItemTime1Component } from './components/inventory-item-time1/inventory-item-time1.component';
+import { InventoryItemTime2Component } from './components/inventory-item-time2/inventory-item-time2.component';
 // import { DashComponent } from './components/dash/dash.component';
 
 @NgModule({
@@ -41,6 +49,14 @@ import { FinancialStoreTime2Component } from './components/financial-store-time2
     Query10Component,
     FinancialStoreTime1Component,
     FinancialStoreTime2Component,
+    FinancialCustomerTime1Component,
+    FinancialCustomerTime2Component,
+    FinancialItemTime1Component,
+    FinancialItemTime2Component,
+    InventoryStoreTime1Component,
+    InventoryStoreTime2Component,
+    InventoryItemTime1Component,
+    InventoryItemTime2Component,
     // DashComponent,
   ],
   imports: [
