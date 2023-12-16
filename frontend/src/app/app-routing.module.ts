@@ -14,6 +14,14 @@ import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
 import { FinancialStoreTime1Component } from './components/financial-store-time1/financial-store-time1.component'
 import { FinancialStoreTime2Component } from './components/financial-store-time2/financial-store-time2.component'
+import { FinancialCustomerTime1Component } from "./components/financial-customer-time1/financial-customer-time1.component";
+import { FinancialCustomerTime2Component } from "./components/financial-customer-time2/financial-customer-time2.component";
+import { FinancialItemTime1Component } from "./components/financial-item-time1/financial-item-time1.component";
+import { FinancialItemTime2Component } from "./components/financial-item-time2/financial-item-time2.component";
+import { InventoryStoreTime1Component } from "./components/inventory-store-time1/inventory-store-time1.component";
+import { InventoryStoreTime2Component } from "./components/inventory-store-time2/inventory-store-time2.component";
+import { InventoryItemTime1Component } from "./components/inventory-item-time1/inventory-item-time1.component";
+import { InventoryItemTime2Component } from "./components/inventory-item-time2/inventory-item-time2.component";
 
 const routes: Routes = [
   { path: 'first-component', component: AddTutorialComponent },
@@ -30,6 +38,14 @@ const routes: Routes = [
   { path: 'q10', component: Query10Component },
   { path: 'financialStoreTime1', component: FinancialStoreTime1Component },
   { path: 'financialStoreTime2', component: FinancialStoreTime2Component },
+  { path: 'financialCustomerTime1', component: FinancialCustomerTime1Component },
+  { path: 'financialCustomerTime2', component: FinancialCustomerTime2Component },
+  { path: 'financialItemTime1', component: FinancialItemTime1Component },
+  { path: 'financialItemTime2', component: FinancialItemTime2Component },
+  { path: 'inventoryStoreTime1', component: InventoryStoreTime1Component },
+  { path: 'inventoryStoreTime2', component: InventoryStoreTime2Component },
+  { path: 'inventoryItemTime1', component: InventoryItemTime1Component },
+  { path: 'inventoryItemTime2', component: InventoryItemTime2Component },
 ];
 
 @NgModule({

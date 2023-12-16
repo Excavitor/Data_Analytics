@@ -12,6 +12,13 @@ from QueryServices.financialStoreTime1Service import QueryFST1API
 from QueryServices.financialStoreTime2Service import QueryFST2API
 from QueryServices.financialCustomerTime1Service import QueryFCusT1API
 from QueryServices.financialCustomerTime2Service import QueryFCusT2API
+from QueryServices.financialItemTime1Service import QueryFitemT1API
+from QueryServices.financialItemTime2Service import QueryFitemT2API
+from QueryServices.inventoryStoreTime1Service import QueryIStoreT1API
+from QueryServices.inventoryStoreTime2Service import QueryIStoreT2API
+from QueryServices.inventoryItemTime1Service import QueryIitemT1API
+from QueryServices.inventoryItemTime2Service import QueryIitemT2API
+
 
 from flask import Blueprint
 
@@ -33,4 +40,10 @@ query_api.add_url_rule('/financialStoreTime1', view_func=QueryFST1API.as_view("s
 query_api.add_url_rule('/financialStoreTime2', view_func=QueryFST2API.as_view("store and time dimensional financial analytics 2"))
 query_api.add_url_rule('/financialCustomerTime1', view_func=QueryFCusT1API.as_view("customer and time dimensional financial analytics 1"))
 query_api.add_url_rule('/financialCustomerTime2', view_func=QueryFCusT2API.as_view("customer and time dimensional financial analytics 2"))
+query_api.add_url_rule('/financialItemTime1', view_func=QueryFitemT1API.as_view("item and time dimensional financial analytics 1"))
+query_api.add_url_rule('/financialItemTime2', view_func=QueryFitemT2API.as_view("item and time dimensional financial analytics 2"))
+query_api.add_url_rule('/inventoryStoreTime1', view_func=QueryIStoreT1API.as_view("store and time dimensional inventory analytics 1"))
+query_api.add_url_rule('/inventoryStoreTime2', view_func=QueryIStoreT2API.as_view("store and time dimensional inventory analytics 2"))
+query_api.add_url_rule('/inventoryItemTime1', view_func=QueryIitemT1API.as_view("item and time dimensional inventory analytics 1"))
+query_api.add_url_rule('/inventoryItemTime2', view_func=QueryIitemT2API.as_view("item and time dimensional inventory analytics 2"))
 

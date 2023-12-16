@@ -7,5 +7,7 @@ class QueryFCusT1API(MethodView):
         self.qFCusT1 = QueryFCusT1()
 
     def get(self):
-        result_div_q1, result_div_q2, result_div_q3, result_div_q4 = self.qFCusT1.execute()
-        return jsonify({'div_q1': result_div_q1, 'div_q2': result_div_q2, 'div_q3': result_div_q3, 'div_q4': result_div_q4})
+        # result_div_q1, result_div_q2, result_div_q3, result_div_q4 = self.qFCusT1.execute()
+        # return jsonify({'div_q1': result_div_q1, 'div_q2': result_div_q2, 'div_q3': result_div_q3, 'div_q4': result_div_q4})
+        result = self.qFCusT1.execute()
+        return jsonify(result)
