@@ -5,10 +5,9 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-financial-store-time2',
   templateUrl: './financial-store-time2.component.html',
-  styleUrls: ['./financial-store-time2.component.css']
+  styleUrls: ['./financial-store-time2.component.css'],
 })
 export class FinancialStoreTime2Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
@@ -45,14 +44,10 @@ export class FinancialStoreTime2Component implements OnInit {
     },
   ];
   chartLabels: string[] = this.month;
-  // ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
   chartOptions: ChartOptions = {
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
       x: {
         type: 'category',
@@ -63,7 +58,7 @@ export class FinancialStoreTime2Component implements OnInit {
       xAxis: {
         display: false,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -77,18 +72,13 @@ export class FinancialStoreTime2Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 13,
@@ -120,14 +110,16 @@ export class FinancialStoreTime2Component implements OnInit {
       this.sales3.push(d.total_sales);
     }
 
-    // Update chart data
     this.chartData[0].data = this.sales1;
     this.chartData[1].data = this.sales2;
     this.chartData[2].data = this.sales3;
   }
 
   updateChartData(): void {
-    if (this.selectedDataCount < 1 || this.selectedDataCount > this.month.length) {
+    if (
+      this.selectedDataCount < 1 ||
+      this.selectedDataCount > this.month.length
+    ) {
       console.error('Invalid selectedDataCount');
       return;
     }

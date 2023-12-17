@@ -4,9 +4,8 @@ from QueryController.inventoryItemTime2 import QueryIitemT2
 
 class QueryIitemT2API(MethodView):
     def __init__(self):
-        self.q2 = QueryIitemT2()  # Create an instance of QueryFST1
+        self.q2 = QueryIitemT2()
 
     def get(self):
-        # Call the execute method on the instance, not the class
         result_div_q1, result_div_q2 = self.q2.execute()
         return jsonify({'div_q1': result_div_q1, 'div_q2': result_div_q2})

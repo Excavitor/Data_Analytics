@@ -38,24 +38,25 @@
             <div class="d-flex align-items-start">
               <div class="flex-grow-1">
                 <label for="dataCount">Select number of items to visualize:</label>
-                                <select id="dataCount" [(ngModel)]="selectedDataCount" (change)="updateChartData()">
-                                  <option value="1" disabled>Select</option>                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                  <option value="7">7</option>
-                                  <option value="8">8</option>
-                                  <option value="9">9</option>
-                                  <option value="10">10</option>
-                                  <option value="11">11</option>
-                                  <option value="{{ this.month.length }}">
-                                    {{ "All (" + this.month.length + ")" }}
-                                  </option>
-                                </select>
+                <select id="dataCount" [(ngModel)]="selectedDataCount" (change)="updateChartData()">
+                  <option value="1" disabled>Select</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="{{ this.month.length }}">
+                    {{ "All (" + this.month.length + ")" }}
+                  </option>
+                </select>
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -74,33 +75,54 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the total monthly sales for different store sizes. There are 3 types of stores
+                      present: small, medium, and high.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        Small-type stores perform better in February, April, May, and August. Sales are high in this
+                        month. The highest sale in August was 431034 taka.
+                        Type store has the highest Capacity to store product. But this type of store performs better in
+                        January and March. For the rest of the month, it could be better. The highest sales were in
+                        March, 459602 taka, the highest sale till now.
+                      </li>
+                      <li>
+                        Medium-type stores are the busiest store. In total, in 6 months, its sales are high. Its sales
+                        are high except in August from June to December of any year. The highest sales were in July,
+                        408695 taka.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the total monthly sales for different store sizes. There are 3 types of stores
+                      present: small, medium, and high.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        To keep track of each store is very important. Which store performs better in which month so
+                        that supply can be increased or decreased. From the chart, it is only a 2-month high-capacity
+                        store need, but it is unnecessary for the rest of the year. Maximum time: Medium-type stores
+                        need it because they stay busy for 6 months, and small-type stores remain busy for 4 months. So
+                        for 2 months, high-capacity stores, and for the rest of the year, small and medium-capacity
+                        stores can do the job, and high-capacity stores can be shut down quickly to save money and
+                        increase profit.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

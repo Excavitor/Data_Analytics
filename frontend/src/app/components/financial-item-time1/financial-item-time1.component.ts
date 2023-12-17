@@ -5,14 +5,12 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-financial-item-time1',
   templateUrl: './financial-item-time1.component.html',
-  styleUrls: ['./financial-item-time1.component.css']
+  styleUrls: ['./financial-item-time1.component.css'],
 })
 export class FinancialItemTime1Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
-  // year: any[] = [];
   item_name: any[] = [];
   quantity: any[] = [];
   selectedDataCount: number = 1;
@@ -32,28 +30,13 @@ export class FinancialItemTime1Component implements OnInit {
   chartLabels: string[] = this.item_name;
 
   chartOptions: ChartOptions = {
-    // indexAxis: 'y',
-
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -67,18 +50,13 @@ export class FinancialItemTime1Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 15,
@@ -90,12 +68,9 @@ export class FinancialItemTime1Component implements OnInit {
     this.getValueFitemT1();
   }
 
-
-
   getValueFitemT1(): void {
     this.queryService.getFitemT1().subscribe((data: any) => {
       for (const d of data) {
-        // this.year.push(d.year);
         this.quantity.push(d.quantity);
         this.item_name.push(d.item_name);
       }
@@ -123,4 +98,3 @@ export class FinancialItemTime1Component implements OnInit {
     }
   }
 }
-

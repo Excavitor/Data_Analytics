@@ -53,7 +53,7 @@
                 </select>
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -72,33 +72,48 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows how many units a store sold each month over time.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        From the chart, there are 44 stores located in different cities all over the country. Store
+                        S0043 sold the highest number of units, 7425 in March. The second highest is the S0024 store,
+                        which sold 7128 units. Different stores in different months sold their highest number of crew
+                      </li>
+                      <li>
+                        S0024 in January, S0012 in February, S0043 in March, S0026 in April, S0026 in May, S0025 in
+                        June, S0006 in July, S0012 in August, S0031 in September, S0026 in October, S0032 in November,
+                        and S0041 in December sold the highest number of unit.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows how many units a store sold each month over time.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        This chart is essential to understand which store is the most demanding and sells more products.
+                        S0026 is the most demanding store, which sold the highest yield in April, May, and October. 2nd
+                        demand is S0012, which sold the highest product in February and August. With this chart, less
+                        demanding stores can be seen for a month and can be shut down to save money and increase supply
+                        for the most demanding ones.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

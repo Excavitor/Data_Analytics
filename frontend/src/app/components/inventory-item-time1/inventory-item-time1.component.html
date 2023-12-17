@@ -48,7 +48,7 @@
                 </select>
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -67,33 +67,42 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This graph shows the quarterly stock quantity from 2014 to 2022.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        From the graph, the stock quantity was very high in the 1st quarter of 2020, at 61,485 units.
+                        The stock quantity in the 2nd quarter 2018 was very high, at 36,952 units. In the 3rd quarter of
+                        2016, the stock quantity was 47,523; in the 4th quarter of 2019, the stock quantity was 41,949,
+                        which was very high. The minimum stock quantity was in 2021, which was 18,382 units. On average,
+                        around 30,000 units are stocked in each quarter.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This graph shows the quarterly stock quantity from 2014 to 2022.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        This graph is essential to see the number of stock quantities every quarter from 2014 to 2022.
+                        The highest stock is in the 1st quarter of every year, and the lowest is in the 2nd quarter.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

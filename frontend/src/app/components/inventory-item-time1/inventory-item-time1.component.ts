@@ -5,10 +5,9 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-inventory-item-time1',
   templateUrl: './inventory-item-time1.component.html',
-  styleUrls: ['./inventory-item-time1.component.css']
+  styleUrls: ['./inventory-item-time1.component.css'],
 })
 export class InventoryItemTime1Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
@@ -119,28 +118,13 @@ export class InventoryItemTime1Component implements OnInit {
   chartLabels: string[] = this.months;
 
   chartOptions: ChartOptions = {
-    // indexAxis: 'y',
-
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -154,18 +138,13 @@ export class InventoryItemTime1Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 15,
@@ -177,13 +156,9 @@ export class InventoryItemTime1Component implements OnInit {
     this.getValueIitemT1();
   }
 
-
-
   getValueIitemT1(): void {
     this.queryService.getIitemT1().subscribe((data: any) => {
       this.data_all = data;
-
-      // Process data for the chart
       this.processChartData();
     });
   }
@@ -225,8 +200,6 @@ export class InventoryItemTime1Component implements OnInit {
     for (const d of this.data_all['div_q9']) {
       this.sales9.push(d.stock_quantity);
     }
-
-    // Update chart data
     this.chartData[0].data = this.sales1;
     this.chartData[1].data = this.sales2;
     this.chartData[2].data = this.sales3;
@@ -239,7 +212,10 @@ export class InventoryItemTime1Component implements OnInit {
   }
 
   updateChartData(): void {
-    if (this.selectedDataCount < 1 || this.selectedDataCount > this.months.length) {
+    if (
+      this.selectedDataCount < 1 ||
+      this.selectedDataCount > this.months.length
+    ) {
       console.error('Invalid selectedDataCount');
       return;
     }
@@ -275,5 +251,3 @@ export class InventoryItemTime1Component implements OnInit {
     }
   }
 }
-
-

@@ -55,7 +55,7 @@
                 </select>
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -74,33 +74,44 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the yearly total sales of each product from 2014 to 2022.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        From the chart, there are 255 different products on this platform. Among them, Suger in the Raw
+                        Packets total sales is the highest, at 486,676 taka. 2nd highest is the Strong Everyday Napkins,
+                        which sold 335,801 taka. There are around 50 products that sold for more than 50,000 takas in
+                        total, and the rest of the products, which are the highest in number, stay below 50,000 takas.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the yearly total sales of each product from 2014 to 2022.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        This chart is essential for visualizing the total earnings from a product from the year 2014 to
+                        2022. From there, Suger in the Raw Packets is the most valuable in total sales, and earnings
+                        from this product are 486,676 taka, which is way higher than the 2nd product. If any product is
+                        not selling that much or isn’t able to bring enough money, then it will be better to remove
+                        that, and in that way, profit will Increase, and loss will be less.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

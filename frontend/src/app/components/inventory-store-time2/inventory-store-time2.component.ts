@@ -5,10 +5,9 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-inventory-store-time2',
   templateUrl: './inventory-store-time2.component.html',
-  styleUrls: ['./inventory-store-time2.component.css']
+  styleUrls: ['./inventory-store-time2.component.css'],
 })
 export class InventoryStoreTime2Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
@@ -152,28 +151,13 @@ export class InventoryStoreTime2Component implements OnInit {
   chartLabels: string[] = this.store_key;
 
   chartOptions: ChartOptions = {
-    // indexAxis: 'y',
-
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -187,18 +171,13 @@ export class InventoryStoreTime2Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 15,
@@ -210,13 +189,9 @@ export class InventoryStoreTime2Component implements OnInit {
     this.getValueIStoreT2();
   }
 
-
-
   getValueIStoreT2(): void {
     this.queryService.getIStoreT2().subscribe((data: any) => {
       this.data_all = data;
-
-      // Process data for the chart
       this.processChartData();
     });
   }
@@ -271,7 +246,6 @@ export class InventoryStoreTime2Component implements OnInit {
       this.sales12.push(d.quantity);
     }
 
-    // Update chart data
     this.chartData[0].data = this.sales1;
     this.chartData[1].data = this.sales2;
     this.chartData[2].data = this.sales3;
@@ -287,7 +261,10 @@ export class InventoryStoreTime2Component implements OnInit {
   }
 
   updateChartData(): void {
-    if (this.selectedDataCount < 1 || this.selectedDataCount > this.store_key.length) {
+    if (
+      this.selectedDataCount < 1 ||
+      this.selectedDataCount > this.store_key.length
+    ) {
       console.error('Invalid selectedDataCount');
       return;
     }
@@ -329,5 +306,3 @@ export class InventoryStoreTime2Component implements OnInit {
     }
   }
 }
-
-

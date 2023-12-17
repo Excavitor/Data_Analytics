@@ -5,10 +5,9 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-financial-item-time2',
   templateUrl: './financial-item-time2.component.html',
-  styleUrls: ['./financial-item-time2.component.css']
+  styleUrls: ['./financial-item-time2.component.css'],
 })
 export class FinancialItemTime2Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
@@ -119,28 +118,13 @@ export class FinancialItemTime2Component implements OnInit {
   chartLabels: string[] = this.item_name;
 
   chartOptions: ChartOptions = {
-    // indexAxis: 'y',
-
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -154,18 +138,13 @@ export class FinancialItemTime2Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 15,
@@ -177,13 +156,9 @@ export class FinancialItemTime2Component implements OnInit {
     this.getValueFitemT2();
   }
 
-
-
   getValueFitemT2(): void {
     this.queryService.getFitemT2().subscribe((data: any) => {
       this.data_all = data;
-
-      // Process data for the chart
       this.processChartData();
     });
   }
@@ -226,7 +201,6 @@ export class FinancialItemTime2Component implements OnInit {
       this.sales9.push(d.total_sales);
     }
 
-    // Update chart data
     this.chartData[0].data = this.sales1;
     this.chartData[1].data = this.sales2;
     this.chartData[2].data = this.sales3;
@@ -239,7 +213,10 @@ export class FinancialItemTime2Component implements OnInit {
   }
 
   updateChartData(): void {
-    if (this.selectedDataCount < 1 || this.selectedDataCount > this.item_name.length) {
+    if (
+      this.selectedDataCount < 1 ||
+      this.selectedDataCount > this.item_name.length
+    ) {
       console.error('Invalid selectedDataCount');
       return;
     }
@@ -273,25 +250,4 @@ export class FinancialItemTime2Component implements OnInit {
       this.chartLabels.push(month);
     }
   }
-
-  // updateChartData(): void {
-  //   if (
-  //     this.selectedDataCount < 1 ||
-  //     this.selectedDataCount > this.data_all.length
-  //   ) {
-  //     console.error('Invalid selectedDataCount');
-  //     return;
-  //   }
-  //
-  //   const selectedData = this.data_all.slice(0, this.selectedDataCount);
-  //
-  //   this.chartData[0].data = [];
-  //   this.chartLabels = [];
-  //
-  //   for (const d of selectedData) {
-  //     this.chartData[0].data.push(d.total_sales);
-  //     this.chartLabels.push(d.item_name);
-  //   }
-  // }
 }
-

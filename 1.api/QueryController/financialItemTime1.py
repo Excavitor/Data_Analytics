@@ -20,11 +20,8 @@ class QueryFitemT1:
         cur.execute(div_q)
         result = cur.fetchall()
         pd_data = pd.DataFrame(list(result), columns=["item_name", "quantity"])
-        # pd_data["total sales"] = pd_data["total sales"].astype("float64")
         pd_data = pd_data.dropna()
-        # print(pd_data)
         return pd_data.to_dict(orient='records')
-        # return result
 
 if __name__ == '__main__':
     QueryFitemT1 = QueryFitemT1()

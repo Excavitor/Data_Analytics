@@ -17,7 +17,7 @@ class Query7:
                 " join ecomdb_star_schema.item_dim i on i.item_key = f.item_key" \
                 " join ecomdb_star_schema.time_dim t on t.time_key = f.time_key" \
                 " where t.date>(CURRENT_DATE - integer '{}')".format(self.days)
-        # select_stmt = div_q
+        
         cur.execute(div_q)
         result = cur.fetchall()
         pd_data = pd.DataFrame(list(result), columns=["item Name"])

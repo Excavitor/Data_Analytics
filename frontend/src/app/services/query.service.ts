@@ -1,17 +1,14 @@
-import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-const baseUrl = 'http://127.0.0.1:5000/api'
-// const baseUrlOther = 'http://127.0.0.1:5000/api1'
+const baseUrl = 'http://127.0.0.1:5000/api';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QueryService {
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getQuery1Division(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/q1`);
@@ -36,18 +33,14 @@ export class QueryService {
     return this.http.get<any>(`${baseUrl}/q5`);
   }
 
-  // getQuery5V2(): Observable<any> {
-  //   return this.http.get<any>(`${baseUrl}/q5v2`);
-  // }
-
   getQuery6(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/q6`);
   }
 
-  getQuery7(days?:any): Observable<any> {
-    const headers = {'content-type': 'application/json'}
-    const body = JSON.stringify({'days':days});
-    return this.http.post(`${baseUrl}/q7`, body, {'headers':headers});
+  getQuery7(days?: any): Observable<any> {
+    const headers = { 'content-type': 'application/json' };
+    const body = JSON.stringify({ days: days });
+    return this.http.post(`${baseUrl}/q7`, body, { headers: headers });
   }
 
   getQuery8(): Observable<any> {

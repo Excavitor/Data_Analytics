@@ -5,10 +5,9 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-inventory-store-time1',
   templateUrl: './inventory-store-time1.component.html',
-  styleUrls: ['./inventory-store-time1.component.css']
+  styleUrls: ['./inventory-store-time1.component.css'],
 })
 export class InventoryStoreTime1Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
@@ -45,14 +44,10 @@ export class InventoryStoreTime1Component implements OnInit {
     },
   ];
   chartLabels: string[] = this.year;
-  // ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
   chartOptions: ChartOptions = {
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
       x: {
         type: 'category',
@@ -63,7 +58,7 @@ export class InventoryStoreTime1Component implements OnInit {
       xAxis: {
         display: false,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -77,18 +72,13 @@ export class InventoryStoreTime1Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 13,
@@ -119,15 +109,16 @@ export class InventoryStoreTime1Component implements OnInit {
     for (const d of this.data_all['div_q3']) {
       this.sales3.push(d.quantity);
     }
-
-    // Update chart data
     this.chartData[0].data = this.sales1;
     this.chartData[1].data = this.sales2;
     this.chartData[2].data = this.sales3;
   }
 
   updateChartData(): void {
-    if (this.selectedDataCount < 1 || this.selectedDataCount > this.year.length) {
+    if (
+      this.selectedDataCount < 1 ||
+      this.selectedDataCount > this.year.length
+    ) {
       console.error('Invalid selectedDataCount');
       return;
     }

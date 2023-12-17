@@ -23,7 +23,6 @@ from QueryServices.inventoryItemTime2Service import QueryIitemT2API
 from flask import Blueprint
 
 query_api = Blueprint('queryapi', __name__)
-# query_api1 = Blueprint('queryapi1',__name__)
 
 query_api.add_url_rule('/q1', view_func=Query1API.as_view("Get Division Wise Sales"))
 query_api.add_url_rule('/q1dis', view_func=Query1API2.as_view("Get District Wise Sales"))

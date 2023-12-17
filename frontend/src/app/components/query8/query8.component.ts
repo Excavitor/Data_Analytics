@@ -89,9 +89,6 @@ export class Query8Component implements OnInit, AfterViewInit {
       paging: true,
       searching: true,
       lengthChange: true,
-      // pageLength: 10,
-      // processing: true,
-      // serverSide: true,
       pagingType: 'simple_numbers',
       language: {
         searchPlaceholder: 'Search any',

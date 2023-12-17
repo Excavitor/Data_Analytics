@@ -37,25 +37,9 @@
           <div class="card-body py-4">
             <div class="d-flex align-items-start">
               <div class="flex-grow-1">
-                <!--                <label for="dataCount">Select number of items to visualize:</label>-->
-                <!--                <select id="dataCount">-->
-                <!--                  [(ngModel)]="selectedDataCount" (change)="updateChartData()"-->
-                <!--                  <option value="1">1</option>-->
-                <!--                  <option value="2">2</option>-->
-                <!--                  <option value="3">3</option>-->
-                <!--                  <option value="4">4</option>-->
-                <!--                  <option value="5">5</option>-->
-                <!--                  <option value="6">6</option>-->
-                <!--                  <option value="7">7</option>-->
-                <!--                  <option value="8">8</option>-->
-                <!--                  <option value="9">9</option>-->
-                <!--                  <option value="{{ data_all.length }}">-->
-                <!--                    {{ "All (" + data_all.length + ")" }}-->
-                <!--                  </option>-->
-                <!--                </select>-->
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -74,33 +58,48 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows which Division customers spent how much each year from 2014 to 2022. There are
+                      only 4 divisions: Dhaka, Chittagong, Barisal & Sylhet.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        Dhaka is dominating every year in total sales. Starting the year, customer total sales were
+                        650813 takas, increasing until 2016. Then, there is a drop and an increase from 2017 to 2020.
+                        After that, customers' money went down but didn't cross, starting in 2014.
+                      </li>
+                      <li>
+                        Chittagong is the next dominating year, but 2017 sylhet crossed Chittagong with total sales of
+                        130886. Sylhet is the next dominating, but Barishal struck in 2020 with sales of 99,741 taka.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows which Division customers spent how much each year from 2014 to 2022. There are
+                      only 4 divisions: Dhaka, Chittagong, Barisal & Sylhet.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        Dhaka Division customers spent more than other Divisions. As this division is the most populated
+                        one, that's why a vast number of customers are here and spend more money. Then Chittagong,
+                        Sylhet, and lastly barishal. Supply of products can increase in Dhaka and Chittagong and
+                        decrease in others if sales need to improve.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

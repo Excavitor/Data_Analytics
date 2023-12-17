@@ -74,12 +74,6 @@ class QueryFitemT2:
                             order by i.item_name;
                         """
 
-        # cur.execute(div_q)
-        # result = cur.fetchall()
-        # pd_data = pd.DataFrame(list(result), columns=["item_name", "total_sales"])
-        # pd_data["total_sales"] = pd_data["total_sales"].astype("float64")
-        # pd_data = pd_data.dropna()
-
         cur.execute(div_q1)
         result = cur.fetchall()
         pd_data1 = pd.DataFrame(list(result), columns=["item_name", "total_sales"])
@@ -139,9 +133,6 @@ class QueryFitemT2:
             pd_data4.to_dict(orient='records'), pd_data5.to_dict(orient='records'), pd_data6.to_dict(orient='records'),
             pd_data7.to_dict(orient='records'), pd_data8.to_dict(orient='records'), pd_data9.to_dict(orient='records')
         )
-
-        # return pd_data.to_dict(orient='records')
-        # return result
 
 if __name__ == '__main__':
     QueryFitemT2 = QueryFitemT2()

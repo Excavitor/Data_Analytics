@@ -37,25 +37,9 @@
           <div class="card-body py-4">
             <div class="d-flex align-items-start">
               <div class="flex-grow-1">
-<!--                <label for="dataCount">Select number of items to visualize:</label>-->
-<!--                <select id="dataCount">-->
-<!--                  [(ngModel)]="selectedDataCount" (change)="updateChartData()"-->
-<!--                  <option value="1">1</option>-->
-<!--                  <option value="2">2</option>-->
-<!--                  <option value="3">3</option>-->
-<!--                  <option value="4">4</option>-->
-<!--                  <option value="5">5</option>-->
-<!--                  <option value="6">6</option>-->
-<!--                  <option value="7">7</option>-->
-<!--                  <option value="8">8</option>-->
-<!--                  <option value="9">9</option>-->
-<!--                  <option value="{{ data_all.length }}">-->
-<!--                    {{ "All (" + data_all.length + ")" }}-->
-<!--                  </option>-->
-<!--                </select>-->
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -74,33 +58,62 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the Yearly total sales in each division from 2014 to 2022.
+                      Here are some of the key findings from the chart:
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        <strong>Total sales have quietly increased in a few divisions over the past eight
+                          years.</strong>
+                        The most significant sales were in Dhaka, where sales from 2014 to 2016 significantly increased,
+                        but in 2017, a sudden drop but at least the starting year.
+                        Then, there was an increase in growth till 2020; after that, sales dropped each year.
+                        Rajshahi, Khulna, Sylhet, and Mymensing also show up and down sales.
+                        Meanwhile, sales in the other divisions grew less significantly.
+                      </li>
+                      <li>
+                        <strong>Dhaka is the clear leader in terms of total sales.</strong>
+                        2016 Dhaka's sales were <font style="color:red;">698,523(tk)</font>, the highest in all
+                        divisions.
+                        Rajshahi, Khulna, Sylhet, and Mymensing were the following closest divisions.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the Yearly total sales in each division from 2014 to 2022.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        From an e-commerce point of view, this chart is essential to monitor yearly sales in each
+                        division. Which division sales are better and which are not, and which are sales growth or
+                        downfall, can clearly be seen from this chart. From the chart, almost every division performs
+                        better up and down in every division sales.
+                      </li>
+                      <li class="pb-3">
+                        In the future, all stores can be shut down if it does not perform better. If any division's
+                        sales growth continuously decreases, all stores in that division can be shut down to prevent
+                        loss.
+                      </li>
+                      <li>
+                        If any division performs better and sales growth keeps increasing, more stores can be opened, or
+                        more products can be supplied to earn more profit.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

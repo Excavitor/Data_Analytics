@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
 import { Query1Component } from './components/query1/query1.component';
 import { CommonModule } from '@angular/common';
-import {NgChartsModule} from "ng2-charts";
-import {HttpClientModule} from "@angular/common/http";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {DataTablesModule} from "angular-datatables";
+import { NgChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
 import { MyComComponent } from './components/my-com/my-com.component';
 import { Query2Component } from './components/query2/query2.component';
 import { Query3Component } from './components/query3/query3.component';
@@ -67,9 +67,9 @@ import { InventoryItemTime2Component } from './components/inventory-item-time2/i
     HttpClientModule,
     ReactiveFormsModule,
     DataTablesModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

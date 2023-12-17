@@ -56,7 +56,7 @@
                 </select>
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -75,33 +75,44 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows customers' lifetime value, which means how much each customer spent.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        There are a total of 1984 customers involved in this platform. From chart C001036, customers
+                        spent the most money buying products, 84,802 taka. There are a total of 8 customers who spent
+                        more than 80,000 taka. Most of the customers spent less than 20,000 taka. Around 100 people paid
+                        more than 20,000 taka.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows customers' lifetime value, which means how much each customer spent.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        This chart is essential to keep track of every customer.
+                        Which customer spent more and which spent less can be seen from this graph. On average, the
+                        customer's total paid range can be below 20,000 taka. What product that customer buying can be
+                        added more to increase their money spent. Also, discounts and offers can be given to manipulate
+                        them into buying more to increase profit.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

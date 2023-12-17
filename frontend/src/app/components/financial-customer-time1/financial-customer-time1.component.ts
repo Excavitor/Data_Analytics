@@ -5,15 +5,12 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-financial-customer-time1',
   templateUrl: './financial-customer-time1.component.html',
-  styleUrls: ['./financial-customer-time1.component.css']
+  styleUrls: ['./financial-customer-time1.component.css'],
 })
 export class FinancialCustomerTime1Component implements OnInit {
-
-
   constructor(private queryService: QueryService) {}
 
   data_all_c: any;
-  // year: any[] = [];
   customer: any[] = [];
   total_sales: any[] = [];
   selectedDataCount: number = 1;
@@ -33,28 +30,13 @@ export class FinancialCustomerTime1Component implements OnInit {
   chartLabels: string[] = this.customer;
 
   chartOptions: ChartOptions = {
-    // indexAxis: 'y',
-
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -68,18 +50,13 @@ export class FinancialCustomerTime1Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 15,
@@ -91,12 +68,9 @@ export class FinancialCustomerTime1Component implements OnInit {
     this.getValueFCusT1();
   }
 
-
-
   getValueFCusT1(): void {
     this.queryService.getFCusT1().subscribe((data: any) => {
       for (const d of data) {
-        // this.year.push(d.year);
         this.customer.push(d.coustomer_key);
         this.total_sales.push(d.total_sales);
       }
@@ -125,4 +99,3 @@ export class FinancialCustomerTime1Component implements OnInit {
     }
   }
 }
-

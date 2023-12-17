@@ -5,10 +5,9 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-financial-customer-time2',
   templateUrl: './financial-customer-time2.component.html',
-  styleUrls: ['./financial-customer-time2.component.css']
+  styleUrls: ['./financial-customer-time2.component.css'],
 })
 export class FinancialCustomerTime2Component implements OnInit {
-
   constructor(private queryService: QueryService) {}
 
   data_all: any;
@@ -18,7 +17,6 @@ export class FinancialCustomerTime2Component implements OnInit {
   sales2: any[] = [];
   sales3: any[] = [];
   sales8: any[] = [];
-  // selectedDataCount: number = 1;
 
   chartData: ChartDataset[] = [
     {
@@ -65,11 +63,8 @@ export class FinancialCustomerTime2Component implements OnInit {
   chartLabels: string[] = this.year;
 
   chartOptions: ChartOptions = {
-    // ⤵️ Fill the wrapper
     responsive: true,
     maintainAspectRatio: true,
-
-    // ⤵️ Remove the grids
     scales: {
       x: {
         type: 'category',
@@ -80,7 +75,7 @@ export class FinancialCustomerTime2Component implements OnInit {
       xAxis: {
         display: false,
         grid: {
-          drawBorder: false, // removes random border at bottom
+          drawBorder: false,
         },
       },
       yAxis: {
@@ -94,18 +89,13 @@ export class FinancialCustomerTime2Component implements OnInit {
       },
 
       tooltip: {
-        // ⤵️ tooltip main styles
         backgroundColor: '#ffeaff',
-        displayColors: false, // removes unnecessary legend
+        displayColors: false,
         padding: 10,
-
-        // ⤵️ title
         titleColor: '#0b4ad2',
         titleFont: {
           size: 18,
         },
-
-        // ⤵️ body
         bodyColor: '#2D2F33',
         bodyFont: {
           size: 13,
@@ -119,10 +109,8 @@ export class FinancialCustomerTime2Component implements OnInit {
 
   getValueFCusT2(): void {
     this.queryService.getFCusT2().subscribe((data: any) => {
-      // Assuming data_all5 contains combined data for both queries
       this.data_all = data;
 
-      // Process data for the chart
       this.processChartData();
     });
   }
@@ -144,83 +132,9 @@ export class FinancialCustomerTime2Component implements OnInit {
       this.sales8.push(d.total_sales);
     }
 
-    // Update chart data
     this.chartData[0].data = this.sales1;
     this.chartData[1].data = this.sales2;
     this.chartData[2].data = this.sales3;
     this.chartData[3].data = this.sales8;
   }
-
-  // updateChartData(): void {
-  //   if (
-  //     this.selectedDataCount < 1 ||
-  //     this.selectedDataCount > this.data_all.length
-  //   ) {
-  //     console.error('Invalid selectedDataCount');
-  //     return;
-  //   }
-  //
-  //   const selectedData = this.data_all.slice(0, this.selectedDataCount);
-  //
-  //   this.chartData[0].data = [];
-  //   this.chartData[1].data = [];
-  //   this.chartData[2].data = [];
-  //   this.chartData[3].data = [];
-  //   this.chartData[4].data = [];
-  //   this.chartData[5].data = [];
-  //   this.chartData[6].data = [];
-  //   this.chartData[7].data = [];
-  //   this.chartLabels = [];
-  //
-  //   for (const d of selectedData) {
-  //     this.chartData[0].data.push(d.total_sales);
-  //     this.chartData[1].data.push(d.total_sales);
-  //     this.chartData[2].data.push(d.total_sales);
-  //     this.chartData[3].data.push(d.total_sales);
-  //     this.chartData[4].data.push(d.total_sales);
-  //     this.chartData[5].data.push(d.total_sales);
-  //     this.chartData[6].data.push(d.total_sales);
-  //     this.chartData[7].data.push(d.total_sales);
-  //     this.chartLabels.push(d.store_key);
-  //   }
-  // }
-
-  // getChittagongTotalSales(year: string): number {
-  //   const chittagongData = this.data_all['div_q2'].find((chittagongD: any) => chittagongD.year === year);
-  //   return chittagongData ? chittagongData['total_sales'] : 0;
-  // }
-  //
-  // getBarishalTotalSales(year: string): number {
-  //   const barishalData = this.data_all['div_q3'].find((barishalD: any) => barishalD.year === year);
-  //   return barishalData ? barishalData['total_sales'] : 0;
-  // }
-  //
-  // getKhulnaTotalSales(year: string): number {
-  //   const khulnaData = this.data_all['div_q4'].find((khulnaD: any) => khulnaD.year === year);
-  //   return khulnaData ? khulnaData['total_sales'] : 0;
-  // }
-  //
-  // getMymensinghTotalSales(year: string): number {
-  //   const mymensinghData = this.data_all['div_q5'].find((mymensinghD: any) => mymensinghD.year === year);
-  //   return mymensinghData ? mymensinghData['total_sales'] : 0;
-  // }
-  //
-  // getRajshahiTotalSales(year: string): number {
-  //   const rajshahiData = this.data_all['div_q6'].find((rajshahiD: any) => rajshahiD.year === year);
-  //   return rajshahiData ? rajshahiData['total_sales'] : 0;
-  // }
-  //
-  // getRangpurTotalSales(year: string): number {
-  //   const rangpurData = this.data_all['div_q7'].find((rangpurD: any) => rangpurD.year === year);
-  //   return rangpurData ? rangpurData['total_sales'] : 0;
-  // }
-  //
-  // getSylhetTotalSales(year: string): number {
-  //   const sylhetData = this.data_all['div_q8'].find((sylhetD: any) => sylhetD.year === year);
-  //   return sylhetData ? sylhetData['total_sales'] : 0;
-  // }
-
-
-
 }
-

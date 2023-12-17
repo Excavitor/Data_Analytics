@@ -39,7 +39,6 @@
             <table class="table" style="text-align: center">
               <thead>
                 <tr>
-<!--                  <th>Division</th>-->
                   <th>Quarter</th>
                   <th>Total Sales Barishal</th>
                   <th>Total Sales Dhaka</th>
@@ -47,16 +46,14 @@
                 </tr>
               </thead>
               <tbody>
-              <ng-container *ngFor="let data of data_all5['div_q']">
-                <tr>
-<!--                  <td>{{ data.Division }}</td>-->
-                  <td>{{ data.Quarter }}</td>
-                  <td>{{ data['total sales'] }}</td>
-                  <!-- Add corresponding data for Dhaka -->
-                  <td>{{ getDhakaTotalSales(data.Quarter) }}</td>
-                  <td>{{ getChittagongTotalSales(data.Quarter) }}</td>
-                </tr>
-              </ng-container>
+                <ng-container *ngFor="let data of data_all5['div_q']">
+                  <tr>
+                    <td>{{ data.Quarter }}</td>
+                    <td>{{ data['total sales'] }}</td>
+                    <td>{{ getDhakaTotalSales(data.Quarter) }}</td>
+                    <td>{{ getChittagongTotalSales(data.Quarter) }}</td>
+                  </tr>
+                </ng-container>
               </tbody>
             </table>
           </div>

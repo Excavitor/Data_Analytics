@@ -44,16 +44,6 @@ export class Query10Component implements OnInit, AfterViewInit {
 
     // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
@@ -95,9 +85,6 @@ export class Query10Component implements OnInit, AfterViewInit {
       paging: true,
       searching: true,
       lengthChange: true,
-      // pageLength: 10,
-      // processing: true,
-      // serverSide: true,
       pagingType: 'simple_numbers',
       language: {
         searchPlaceholder: 'Search any',

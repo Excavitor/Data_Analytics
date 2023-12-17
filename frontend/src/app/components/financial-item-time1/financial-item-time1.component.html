@@ -52,7 +52,7 @@
                 </select>
                 <div class="chart-wrapper">
                   <canvas baseChart [type]="'line'" [datasets]="chartData" [labels]="chartLabels"
-                          [options]="chartOptions">
+                    [options]="chartOptions">
                   </canvas>
                 </div>
               </div>
@@ -71,33 +71,43 @@
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                            type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      type="button" role="tab" aria-controls="nav-home" aria-selected="true">
                       Summary
                     </button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                      type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                       Analytics
                     </button>
                   </div>
                 </nav>
                 <div class="tab-content p-2" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                       tabindex="0">
-                    <h3>Chart Summary</h3>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, iure quas! Quas, dolore odit ab debitis vel labore
-                      similique ex ipsum dolor culpa nobis cum beatae incidunt
-                      architecto necessitatibus asperiores.
-                    </p>
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the number of times each product sold.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        From the chart, there are 259 different products on this platform. Among them, 'Stirrers Coffee
+                        Stirs 7inch' sold the highest number of times, 98,464 units. The second highest is 'Sweet N Low
+                        Sweetener,' which sold 39,684 units. There are only 15 products that are sold for more than
+                        10,000 units. And maximum product sold below 1000 units.
+                      </li>
+                    </ol>
                   </div>
                   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                       tabindex="0">
-                    <h3>Chart Analytics</h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolor ad ex excepturi facilis, iste at saepe, repellat
-                    perspiciatis officia libero harum voluptatem facere ea
-                    perferendis aspernatur sint tempora? Est, illo.
+                    tabindex="0">
+                    <h6 class="py-3">
+                      This chart shows the number of times each product sold.
+                    </h6>
+                    <ol>
+                      <li class="pb-3">
+                        This chart is essential to understand the most valuable and useless products over time. Stirrers
+                        Coffee Stirs 7inch is the most practical and demanding product sold at 98,464 units. If any
+                        product is not selling the number of times it was expected, then it can be removed easily by
+                        seeing this graph. This way, profit will increase, and store capacity will increase.
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

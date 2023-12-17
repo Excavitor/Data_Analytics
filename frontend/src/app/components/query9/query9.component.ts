@@ -29,8 +29,6 @@ export class Query9Component implements OnInit, AfterViewInit {
       backgroundColor: 'rgba(75, 192, 192, 0.2)',
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 1,
-      // fill: false,
-      // tension: 0.1
     },
   ];
   chartLabels: string[] = this.division;
@@ -44,16 +42,6 @@ export class Query9Component implements OnInit, AfterViewInit {
 
     // ⤵️ Remove the grids
     scales: {
-      // x: {
-      //   type: 'category'
-      // },
-      // y: {
-      //   beginAtZero: true
-      // },
-      // x: {
-      //   type: 'linear',
-      //   position: 'bottom'
-      // },
       xAxis: {
         display: true,
         grid: {
@@ -95,9 +83,6 @@ export class Query9Component implements OnInit, AfterViewInit {
       paging: true,
       searching: true,
       lengthChange: true,
-      // pageLength: 10,
-      // processing: true,
-      // serverSide: true,
       pagingType: 'simple_numbers',
       language: {
         searchPlaceholder: 'Search any',

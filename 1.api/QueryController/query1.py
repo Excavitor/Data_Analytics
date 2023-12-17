@@ -20,9 +20,7 @@ class Query1:
         pd_data = pd.DataFrame(list(result), columns=["division", "total sales"])
         pd_data["total sales"] = pd_data["total sales"].astype("float64")
         pd_data = pd_data.dropna()
-        # print(pd_data)
         return pd_data.to_dict(orient='records')
-        # return result
 
     def execute2(self):
         con = self.con

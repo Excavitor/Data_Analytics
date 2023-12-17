@@ -8,7 +8,6 @@ CORS(app)
 from router import query_api
 
 app.register_blueprint(query_api, url_prefix='/api/')
-# app.register_blueprint(query_api1, url_prefix='/api1/')
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5000, debug=True)
